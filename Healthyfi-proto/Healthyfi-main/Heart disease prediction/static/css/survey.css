@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+body {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#loader {
+    position: relative;
+    background-color: #141b2d;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+
+#heart {
+    position: absolute;
+    width: 30%;
+}
+
+#contents {
+    position: relative;
+    border-radius: 10px;
+    background-color: #202b47;
+    top: 5vh;
+    height: 90vh;
+}
+
+#left {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-right: #141b2d 1px solid;
+    border-radius: 10px;
+    background-color: orange;
+    height: 90vh;
+}
+
+#right {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-left: #141b2d 1px solid;
+    border-radius: 10px;
+    height: 90vh;
+}
+
+#holder {
+    position: relative;
+    height: 70vh;
+    top: 10vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#submit {
+    position: absolute;
+    top: 25vh;
+    z-index: 1;
+    background-color: #ffffff0e;
+    border: rgb(255, 255, 255) solid 4px;
+    border-radius: 50%;
+    width: 20vh;
+    height: 20vh;
+}
+
+i {
+    color: white;
+}
+
+#submit:hover {
+    background-color: #141b2d;
+    box-shadow: orange 1px 1px 12px 12px;
+}
+
+#submit:hover i {
+    color: orange;
+}
