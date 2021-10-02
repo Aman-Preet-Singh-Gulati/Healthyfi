@@ -4,8 +4,8 @@ $(window).on("load", function() {
 $(document).ready(function() {
 
     $("#search-bar").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        var disease = ["heart attack", "liver disease", "breast cancer", "kidney disease", "diabetes", "hiv", "lungs cancer", "dengu", "herpes"];
+        var value = $(this).val();
+        var disease = ["HEART ATTACK", "LIVER DISEASE", "BREAST CANCER", "KIDNEY DISEASE", "DIABETES", "HIV", "LUNGS CANCER", "DENGUE", "HERPES"];
         var temp = "";
         var len = value.length;
         if (len != 0) {

@@ -11,15 +11,15 @@ def home():
 @app.route('/disease/',methods=['POST'])
 def disease():
     d_name=request.form['search-bar']
-    if(d_name=="heart attack"):
+    if(d_name=="HEART ATTACK"):
        return render_template("survey.html",disease=d_name)
-    elif(d_name=="liver disease"):
+    elif(d_name == "LIVER DISEASE"):
         return render_template("survey.html",disease=d_name)
-    elif(d_name=="breast cancer"):
+    elif(d_name=="BREAST CANCER"):
         return render_template("survey.html",disease=d_name)
-    elif(d_name=="diabetes"):
+    elif(d_name=="DIABETES"):
         return render_template("survey.html",disease=d_name)
-    elif(d_name=="kidney disease"):
+    elif(d_name=="KIDNEY DISEASE"):
         return render_template("survey.html",disease=d_name)
         
     else:
@@ -28,10 +28,11 @@ def disease():
 @app.route('/survey/',methods=['POST'])
 def survey():
     disease_name=request.form['disease-name']
-    if(disease_name == "heart attack"):
-        return render_template("index.html")
+    if(disease_name == "HEART ATTACK"):
+        return render_template("temp.html")
+           
     else:
-        return render_template("new.html",msg="under maintanance!")
+        return render_template("new.html",msg="Under Maintanance!")
 
 @app.route('/predict',methods=['POST'])
 def predict():
@@ -44,10 +45,10 @@ def predict():
 
     output = round(prediction[0], 2)
     if output ==1:
-        return render_template('index.html', prediction_text='You have risk of heart attack'.format(output))
+        return render_template('temp.html', prediction_text='You Have Risk of Heart Attack'.format(output))
     
     elif output == 0:
-        return render_template('index.html', prediction_text='You dont really have risk of heart attack'.format(output))
+        return render_template('temp.html', prediction_text='You Dont Really Have Risk of Heart Attack'.format(output))
         
 
 
