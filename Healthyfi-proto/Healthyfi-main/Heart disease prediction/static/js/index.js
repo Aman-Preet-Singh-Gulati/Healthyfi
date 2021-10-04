@@ -2,6 +2,31 @@ $(window).on("load", function() {
     $("#loader").delay(2000).slideUp(1000);
 });
 $(document).ready(function() {
+    $("#heartattack").click(function() {
+
+        $("#search-bar").val("HEART ATTACK");
+
+    })
+    $("#breast-cancer").click(function() {
+
+        $("#search-bar").val("BREAST CANCER");
+
+    })
+    $("#liver-disease").click(function() {
+
+        $("#search-bar").val("LIVER DISEASE");
+
+    })
+    $("#heartattack").click(function() {
+
+        $("#kidney-disease").val("KIDNEY DISEASE");
+
+    })
+    $("#diabetes").click(function() {
+
+        $("#search-bar").val("DIABETES");
+
+    })
 
     $("#search-bar").on("keyup", function() {
         var value = $(this).val();

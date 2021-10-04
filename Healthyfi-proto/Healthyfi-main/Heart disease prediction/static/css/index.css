@@ -2,6 +2,10 @@ body {
     background-color: #141b2d;
 }
 
+ul>li {
+    margin-left: 10px;
+}
+
 #loader {
     position: relative;
     background-color: #141b2d;
@@ -25,6 +29,7 @@ body {
 #inner-block {
     position: relative;
     display: flex;
+    height: 80vh;
 }
 
 #title {
