@@ -8,6 +8,7 @@ model_heartdisease = pickle.load(open('heart_attack_prediction.pkl', 'rb'))
 model_liverdisease = pickle.load(open('liver_disease_prediction.pkl', 'rb'))
 model_cancer = pickle.load(open('breast_cancer_prediction.pkl', 'rb'))
 model_diabetes = pickle.load(open('diabetes_prediction.pkl', 'rb'))
+model_kidney = pickle.load(open('kidney_disease_prediction.pkl', 'rb'))
 
 @app.route('/')
 def home():
@@ -33,15 +34,15 @@ def disease():
 def survey():
     disease_name=request.form['disease-name']
     if(disease_name == "HEART ATTACK"):
-        return render_template("temp.html")
+        return render_template("heart.html")
     elif(disease_name == "LIVER DISEASE"):
-         return render_template("index_liver.html")
+         return render_template("liver.html")
     elif(disease_name == "KIDNEY DISEASE"):
-         return render_template("index_kideny.html")
+         return render_template("kidney.html")
     elif(disease_name == "DIABETES"):
-         return render_template("index_diabetes.html")
+         return render_template("diabetes.html")
     elif(disease_name == "BREAST CANCER"):
-         return render_template("index_breast_cancer.html")
+         return render_template("breast.html")
            
     else:
         return render_template("new.html",msg="Under Maintanance!")
@@ -57,10 +58,10 @@ def predict():
 
     output = round(prediction[0], 2)
     if output ==1:
-        return render_template('temp.html', prediction_text='You Have Risk of Heart Attack'.format(output))
+        return render_template('heart.html', prediction_text='You Have Risk of Heart Attack'.format(output))
     
     elif output == 0:
-        return render_template('temp.html', prediction_text='You Dont Really Have Risk of Heart Attack'.format(output))
+        return render_template('heart.html', prediction_text='You Dont Really Have Risk of Heart Attack'.format(output))
 
 @app.route('/liverdisease', methods=['GET','POST'])
 def liverdisease():
@@ -79,11 +80,11 @@ def liverdisease():
         prediction = model_liverdisease.predict([[Age, Total_Bilirubin, Direct_Bilirubin, Alkaline_Phosphotase, Alamine_Aminotransferase, Aspartate_Aminotransferase, Total_Protiens, Albumin, Albumin_and_Globulin_Ratio, Gender]])
 
         if prediction==1:
-            return render_template('index_liver.html', prediction_text="Oops! You seem to have Liver Disease.", title='Liver Disease')
+            return render_template('liver.html', prediction_text="Oops! You seem to have Liver Disease.", title='Liver Disease')
         else:
-            return render_template('index_liver.html', prediction_text="Great! You don't have any Liver Disease.", title='Liver Disease')
+            return render_template('liver.html', prediction_text="Great! You don't have any Liver Disease.", title='Liver Disease')
     else:
-        return render_template('index_liver.html', title='Liver Disease')
+        return render_template('liver.html', title='Liver Disease')
 
 @app.route('/breastcancer', methods=['GET','POST'])
 def breastcancer():
@@ -114,11 +115,11 @@ def breastcancer():
         concave_points_worst, symmetry_worst, fractal_dimension_worst]])
 
         if prediction==1:
-            return render_template('index_breast_cancer.html', prediction_text="Oops! The tumor is malignant.", title='Breast Cancer')
+            return render_template('breast.html', prediction_text="Oops! The tumor is malignant.", title='Breast Cancer')
         else:
-            return render_template('index_breast_cancer.html', prediction_text="Great! The tumor is benign.", title='Breast Cancer')
+            return render_template('breast.html', prediction_text="Great! The tumor is benign.", title='Breast Cancer')
     else:
-        return render_template('index_breast_cancer.html',title='Breast Cancer')
+        return render_template('breast.html',title='Breast Cancer')
 
 
 
@@ -137,11 +138,11 @@ def diabetes():
         prediction = model_diabetes.predict([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
 
         if prediction==1:
-            return render_template('index_diabetes.html', prediction_text="Oops! The tumor is malignant.", title='Breast Cancer')
+            return render_template('diabetes.html', prediction_text="Oops! The tumor is malignant.", title='Diabetes')
         else:
-            return render_template('index_diabetes.html', prediction_text="Great! The tumor is benign.", title='Breast Cancer')
+            return render_template('diabetes.html', prediction_text="Great! The tumor is benign.", title='Diabetes')
     else:
-        return render_template('index_diabetes.html',title='Diabetes')    
+        return render_template('diabetes.html',title='Diabetes')    
 
 @app.route('/kidneydisease', methods=['GET', 'POST'])
 def kidneydisease():
@@ -176,11 +177,11 @@ def kidneydisease():
                                               htn, dm, cad, appet, pe, ane ]])
 
         if prediction==1:
-            return render_template('index_kidney.html', prediction_text="Oops! You have high risk of chronic kidney disease.", title='Breast Cancer')
+            return render_template('kidney.html', prediction_text="Oops! You have high risk of chronic kidney disease.", title='Kidney Disease')
         else:
-            return render_template('index_kidney.html', prediction_text="Great! You have low risk.", title='Breast Cancer')
+            return render_template('kidney.html', prediction_text="Great! You have low risk.", title='Kidney Disease')
     else:
-        return render_template('index_kidney.html',title='Diabetes')      
+        return render_template('kidney.html',title='Kidney Disease')      
 
 
 

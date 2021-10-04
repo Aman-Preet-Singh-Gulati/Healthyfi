@@ -17,9 +17,9 @@ $(document).ready(function() {
         $("#search-bar").val("LIVER DISEASE");
 
     })
-    $("#heartattack").click(function() {
+    $("#kidney-disease").click(function() {
 
-        $("#kidney-disease").val("KIDNEY DISEASE");
+        $("#search-bar").val("KIDNEY DISEASE");
 
     })
     $("#diabetes").click(function() {

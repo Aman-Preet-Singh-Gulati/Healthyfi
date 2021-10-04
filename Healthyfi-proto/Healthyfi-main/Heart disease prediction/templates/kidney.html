@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kidney Disease</title>
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' rel="stylesheet" crossorigin="anonymous">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/temp.css') }}">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-8">
+                <form id="regForm" action="{{ url_for('kidneydisease')}}" method="post">
+                    <h1 id="register">Survey Form</h1>
+                    <div class="all-steps" id="all-steps"> <span class="step"><i class="fa fa-check-square"></i></span> <span class="step"><i class="fa fa-check-square"></i></span> <span class="step"><i class="fa fa-check-square"></i></span> <span class="step"><i class="fa fa-check-square"></i></span>                        <span class="step"><i class="fa fa-check-square"></i></span> <span class="step"><i class="fa fa-check-square"></i></span> <span class="step"><i class="fa fa-check-square"></i></span> <span class="step"><i class="fa fa-check-square"></i></span>                        <span class="step"><i class="fa fa-check-square"></i></span> <span class="step"><i class="fa fa-check-square"></i></span> <span class="step"><i class="fa fa-check-square"></i></span> <span class="step"><i class="fa fa-check-square"></i></span>                        <span class="step"><i class="fa fa-check-square"></i></span> <span class="step"><i class="fa fa-check-square"></i></span> <span class="step"><i class="fa fa-check-square"></i></span> <span class="step"><i class="fa fa-check-square"></i></span> <span class="step"><i class="fa fa-check-square"></i></span> <span class="step"><i class="fa fa-check-square"></i></span> <span class="step"><i class="fa fa-check-square"></i></span> <span class="step"><i class="fa fa-check-square"></i></span> <span class="step"><i class="fa fa-check-square"></i></span> <span class="step"><i class="fa fa-check-square"></i></span> <span class="step"><i class="fa fa-check-square"></i></span> <span class="step"><i class="fa fa-check-square"></i></span> </div>
+                    <div class="tab">
+                        <h4>What's your Age in years?</h4>
+                        <p> <input placeholder="Age" oninput="this.className = ''" name="age"></p>
+                    </div>
+                    <div class="tab">
+                        <h4>What's your Blood pressure? (mm/hg)</h4>
+                        <p><input placeholder="Blood pressure" oninput="this.className = ''" name="bp"></p>
+                    </div>
+                    <div class="tab">
+                        <h4>Specific Gravity Nominal? </h4>
+                        <p><input placeholder="Specific gravity" oninput="this.className = ''" name="sg"></p>
+                    </div>
+                    <div class="tab">
+                        <h4>What's your Albumin Level? [0-5]</h4>
+                        <p><input placeholder="Albumin Level" oninput="this.className = ''" name="al"></p>
+                    </div>
+                    <div class="tab">
+                        <h4>What's your Sugar Level? [0-5]</h4>
+                        <p><input placeholder="Sugar Level" oninput="this.className = ''" name="su"></p>
+                    </div>
+                    <div class="tab">
+                        <h4>What's your Red Blood Cells (Nominal) [normal/abnormal]</h4>
+                        <p><input placeholder="Red blood cells" oninput="this.className = ''" name="rbc"></p>
+                    </div>
+                    <div class="tab">
+                        <h4>Is Pus Cell (nominal) there? [normal/abnormal]</h4>
+                        <p><input placeholder="Pus cells" oninput="this.className = ''" name="pc"></p>
+                    </div>
+                    <div class="tab">
+                        <h4>Is there Pus Cell Clumps? [present/notpresent]</h4>
+                        <p><input placeholder="Pus cells clumps" oninput="this.className = ''" name="pcc"></p>
+                    </div>
+                    <div class="tab">
+                        <h4>Is Bacteria there? [present/notpresent]</h4>
+                        <p><input placeholder="Bacteria" oninput="this.className = ''" name="ba"></p>
+                    </div>
+                    <div class="tab">
+                        <h4>What's your Blood Glucose Random Count? [0-500]</h4>
+                        <p><input placeholder="Blood Glucose random" oninput="this.className = ''" name="bgr"></p>
+                    </div>
+                    <div class="tab">
+                        <h4>What's your Blood Urea Count? [0-300]</h4>
+                        <p><input placeholder="Blood urea" oninput="this.className = ''" name="bu"></p>
+                    </div>
+                    <div class="tab">
+                        <h4>What's your Serum Creatinine level? [0-20]</h4>
+                        <p><input placeholder="Serum Creatinine" oninput="this.className = ''" name="sc"></p>
+                    </div>
+                    <div class="tab">
+                        <h4>What's your Sodium Level? [0-200]</h4>
+                        <p><input placeholder="Sodium" oninput="this.className = ''" name="sod"></p>
+                    </div>
+                    <div class="tab">
+                        <h4>What's your Potassium Level? [0-10] </h4>
+                        <p> <input placeholder="Potassium" oninput="this.className = ''" name="pot"></p>
+                    </div>
+                    <div class="tab">
+                        <h4>What's your Haemoglobin count? [0-20]</h4>
+                        <p> <input placeholder="Hemoglobin" oninput="this.className = ''" name="hemo"></p>
+                    </div>
+                    <div class="tab">
+                        <h4>What's your Packed Cell Volume? [0-100]</h4>
+                        <p> <input placeholder="Packed cell volume" oninput="this.className = ''" name="pcv"></p>
+                    </div>
+                    <div class="tab">
+                        <h4>What's your WBC Count? [0-25000]</h4>
+                        <p> <input placeholder="White blood cell count" oninput="this.className = ''" name="wbcc"></p>
+                    </div>
+                    <div class="tab">
+                        <h4>What's your RBC Count? [0-10]</h4>
+                        <p> <input placeholder="Red blood cell count" oninput="this.className = ''" name="rbcc"></p>
+                    </div>
+                    <div class="tab">
+                        <h4>Are You Having Hypertension? [yes/no]</h4>
+                        <p> <input placeholder="Hypertension" oninput="this.className = ''" name="htn"></p>
+                    </div>
+                    <div class="tab">
+                        <h4>Are You Having Diabetes Mellitus? [yes/no]</h4>
+                        <p> <input placeholder="Diabetes mellitus" oninput="this.className = ''" name="dm"></p>
+                    </div>
+                    <div class="tab">
+                        <h4>Are You Having Coronary Artery Disease? [yes/no]</h4>
+                        <p> <input placeholder="Coronary Artery disease" oninput="this.className = ''" name="cad"></p>
+                    </div>
+                    <div class="tab">
+                        <h4>How is Your Appetite? [good/poor]</h4>
+                        <p> <input placeholder="Appetite" oninput="this.className = ''" name="appet"></p>
+                    </div>
+                    <div class="tab">
+                        <h4>Are you having Pedal Edema? [yes/no]</h4>
+                        <p> <input placeholder="Pedal Edema" oninput="this.className = ''" name="pe"></p>
+                    </div>
+                    <div class="tab">
+                        <h4>Are You Having Anaemia? [yes/no]</h4>
+                        <p> <input placeholder="anemia" oninput="this.className = ''" name="ane"></p>
+                    </div>
+                    <div class="thanks-message text-center" id="text-message"> <img src="../static/css/images/tick.png" width="100" class="mb-4">
+                        <h3>Thank you for your feedback!</h3> <span>Thanks for your valuable information. It helps us to improve our services!</span>
+                        <br>
+                        <button value="0" id="result" type="submit" class="btn btn-primary btn-block btn-large">Check Your Results</button>
+                    </div>
+                    <div style="overflow:auto;" id="nextprevious">
+                        <div style="float:right;"> <button type="button" id="prevBtn" onclick="nextPrev(-1)"><i class="fa fa-angle-double-left"></i></button> <button type="button" id="nextBtn" onclick="nextPrev(1)"><i class="fa fa-angle-double-right"></i></button> </div>
+                    </div>
+
+                </form>
+                <div class="alert alert-danger" role="alert">
+                    <p style="text-align:center">{{ prediction_text }}</p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/temp.js') }}"></script>
+</body>
+
+</html>
