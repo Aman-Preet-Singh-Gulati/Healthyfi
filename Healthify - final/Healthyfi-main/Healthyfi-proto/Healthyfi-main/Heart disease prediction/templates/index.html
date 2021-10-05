@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Heart Disease</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Heart Disease </h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	    <input type="text" name="Age" placeholder="Age" required="required" />
+            <input type="text" name="Sex" placeholder="Sex" required="required" />
+		    <input type="text" name="Chest_pain" placeholder="Chest pain" required="required" />
+		    <input type="text" name="Resting_blood_pressure" placeholder="Resting blood pressure" required="required" />
+		    <input type="text" name="Cholesterol" placeholder="Cholesterol" required="required" />
+		    <input type="text" name="Fasting_blood_sugar" placeholder="Fasting blood sugar" required="required" />
+		    <input type="text" name="ECG_results" placeholder="ECG results" required="required" />
+		    <input type="text" name="Maximum_heart_rate" placeholder="Maximum heart rate" required="required" />
+		    <input type="text" name="Exercise_induced_angina" placeholder="Exercise induced angina" required="required" />
+		    <input type="text" name="ST_depression" placeholder="ST depression" required="required" />
+		    <input type="text" name="ST_slope" placeholder="ST slope" required="required" />
+		    <input type="text" name="Major_vessels" placeholder="Major vessels" required="required" />
+		    <input type="text" name="Thalassemia_types" placeholder="Thalassemia types" required="required" />
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <title>Healthify</title>
+    <style>
+        a {
+            color: white;
+        }
+        
+        a:hover {
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid" id="loader">
+        <img id="heart" src="{{ url_for('static', filename='css/images/giphy.gif') }}">
+    </div>
+
+    <div id="main" class="container-fluid">
+        <nav class="navbar navbar-expand-lg .bg-transparent">
+            <img style="position: absolute; width: 5vh; height: 5vh;z-index:-5;" src="{{ url_for('static', filename='css/images/logo.png') }}">
+            <a class="navbar-brand" href="#" style="color: rgb(255, 255, 255);">HEALTHIFY</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown" >
+                <form method="POST" action="{{ url_for('disease') }}"></form>
+              <ul class="navbar-nav" id="items" >
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" style="color: aliceblue;">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#about" style="color: aliceblue;">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#credits" style="color: aliceblue;">TEAM</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: aliceblue;">
+                    DISEASES
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a id="heartattack" class="dropdown-item" href="#btn">HEART ATTACK</a>
+                    <a id="breast-cancer" class="dropdown-item" href="#btn">BREAST CANCER</a>
+                    <a id="liver-disease" class="dropdown-item" href="#btn">LIVER DISEASE</a>
+                    <a id="kidney-disease" class="dropdown-item" href="#btn">KIDNEY DISEASE</a>
+                    <a id="diabetes" class="dropdown-item" href="#btn">DIABETES</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        
+        <div class="row">
+            <div id="#inner-block" class="col-sm-2 offset-sm-5">
+                <img style="position: absolute; width: 36vh; height: 36vh; top:12vh;" src="{{ url_for('static', filename='css/images/logo.png') }}"><br/>
+                <h1 style="color: white; position: absolute;top:32vh;left: 91vh; font-size: 4vw">Healthify</h1>
+            </div>
+
+
+
+        </div>
+
+
+
+        <div class="row">
+
+            <div id="inner-block" class="col-sm-6 offset-sm-3">
+                <form id="form" class="mb-3" method="POST" action="{{ url_for('disease') }}">
+                    <input name="search-bar" type="text" placeholder="Enter a disease name!" class="form-control form-control-lg" id="search-bar" autocomplete="off" oninput="this.value = this.value.toUpperCase()" required>
+                    <label for="search-bar"></label>
+                    <button id="btn" type="submit" class="btn btn-lg">Start</button>
+
+                    <table id="search-result" class="table ">
+                        <thead>
+                            <tr>
+                                <th scope="col">Searches :</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody id="results">
+
+                        </tbody>
+                    </table>
+
+                </form>
+                <p style="position: absolute; top:70vh; color: red;">{{msg}}</p>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="about" style="position: relative; display: flex; align-content: center; justify-content: center; background-color:transparent;" class="col-12">
+                <h1 style="color: white;">ABOUT</h1>
+            </div>
+        </div>
+        <div class="card" style="background-color:transparent">
+            <div class="card-body">
+                <p style="font-size: medium; color: white; font-weight: bold; text-align: justify; text-align: center;">Having difficulty finding reading your medical reports and decide whether you are on risk of a disease?<br> If yes,then you've come to the right place.<br> Healthify allows you to enter your medical details very easily and pridicts whether you have risk of getting that disease or not.</p>
+            </div>
+          </div>
+        <div class="row">
+            
+            
+        </div>
+        <div id="cards_landscape_wrap-2">
+            <div id="credits" style="position: relative; display: flex; align-content: center; justify-content: center; background-color:transparent ;color:rgb(0, 0, 0);" class="col-12">
+                <h1>TEAM</h1><br>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                        <a href="">
+                            <div class="card-flyer">
+                                <div class="text-box">
+                                    <div class="image-box">
+                                        <img src="{{ url_for('static', filename='css/images/aman.jpeg') }}" alt="" />
+                                    </div>
+                                    <div class="text-container">
+                                        <h6>Aman Preet Singh</h6>
+                                        <p style="font-weight: bold;">Data preprocessing <br>Model Development <br> Integration with Flask</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                        <a href="">
+                            <div class="card-flyer">
+                                <div class="text-box">
+                                    <div class="image-box">
+                                        <img src="{{ url_for('static', filename='css/images/eabesh.jfif') }}" alt="" />
+                                    </div>
+                                    <div class="text-container">                                    
+                                        <h6>Eabesh Kumar</h6>
+                                        <p style="font-weight: bold;"><Integration with Flask><br> UI Implementation</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                        <a href="">
+                            <div class="card-flyer">
+                                <div class="text-box">
+                                    <div class="image-box">
+                                        <img src="{{ url_for('static', filename='css/images/sam.jpeg') }}" alt="" />
+                                    </div>
+    
+                                    <div class="text-container">
+                                        <h6>Sameeksha Chopra</h6>
+                                       <p style="font-weight: bold;">Model Development<br> Data preprocessing</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                        <a href="">
+                            <div class="card-flyer">
+                                <div class="text-box">
+                                    <div class="image-box">
+                                        <img src="{{ url_for('static', filename='css/images/sweety.jpeg') }}" alt="" />
+                                    </div>
+                                    <div class="text-container">
+                                        <h6>Sweety Roopchandani</h6>
+                                       <p style="font-weight: bold;">UI Design <br> UI Implementation</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+
+    </div>
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
