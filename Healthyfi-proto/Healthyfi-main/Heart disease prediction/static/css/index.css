@@ -16,6 +16,8 @@ ul>li {
     z-index: 99;
 }
 
+
+
 #heart {
     position: absolute;
     width: 30%;
@@ -75,4 +77,21 @@ tbody tr td:hover {
     box-shadow: inset orange 0px 100px 1px 0px;
     border-color: #141b2d;
     color: #141b2d
+}
+
+@media (min-width: 768px) 
+{ 
+    .dropdown:hover .dropdown-menu 
+    {
+        display: block;
+        margin-top: 0; 
+     }
+}
+@media (max-width: 767px) 
+{ 
+    .dropdown:hover .dropdown-menu
+    {
+        display: none;
+        margin-top: auto; 
+    }
 }
