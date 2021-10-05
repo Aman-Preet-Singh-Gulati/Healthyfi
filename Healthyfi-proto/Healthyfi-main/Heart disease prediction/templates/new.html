@@ -45,7 +45,7 @@
                     <a class="nav-link" aria-current="page" href="#about" style="color: aliceblue;">ABOUT</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#credits" style="color: aliceblue;">CREDITS</a>
+                    <a class="nav-link" aria-current="page" href="#credits" style="color: aliceblue;">TEAM</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: aliceblue;">
@@ -103,15 +103,90 @@
         </div>
 
         <div class="row">
-            <div id="about" style="position: relative; display: flex; align-content: center; justify-content: center; height: 80vh; background-color: wheat;" class="col-12">
-                <h1>ABOUT</h1>
+            <div id="about" style="position: relative; display: flex; align-content: center; justify-content: center; background-color:transparent;" class="col-12">
+                <h1 style="color: white;">ABOUT</h1>
             </div>
         </div>
+        <div class="card" style="background-color:transparent">
+            <div class="card-body">
+                <p style="font-size: medium; color: white; font-weight: bold; text-align: justify; text-align: center;">Having difficulty finding reading your medical reports and decide whether you are on risk of a disease?<br> If yes,then you've come to the right place.<br> Healthify allows you to enter your medical details very easily and pridicts whether you have risk of getting that disease or not.</p>
+            </div>
+          </div>
         <div class="row">
-            <div id="credits" style="position: relative; display: flex; align-content: center; justify-content: center; height: 80vh; background-color: #141b2d;color: wheat;" class="col-12">
-                <h1>CREDITS</h1>
+            
+            
+        </div>
+        <div id="cards_landscape_wrap-2">
+            <div id="credits" style="position: relative; display: flex; align-content: center; justify-content: center; background-color:transparent ;color:rgb(0, 0, 0);" class="col-12">
+                <h1>TEAM</h1><br>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                        <a href="">
+                            <div class="card-flyer">
+                                <div class="text-box">
+                                    <div class="image-box">
+                                        <img src="{{ url_for('static', filename='css/images/aman.jpeg') }}" alt="" />
+                                    </div>
+                                    <div class="text-container">
+                                        <h6>Aman Preet Singh</h6>
+                                        <p style="font-weight: bold;">Data preprocessing <br>Model Development <br> Integration with Flask</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                        <a href="">
+                            <div class="card-flyer">
+                                <div class="text-box">
+                                    <div class="image-box">
+                                        <img src="{{ url_for('static', filename='css/images/eabesh.jfif') }}" alt="" />
+                                    </div>
+                                    <div class="text-container">                                    
+                                        <h6>Eabesh Kumar</h6>
+                                        <p style="font-weight: bold;"><Integration with Flask><br> UI Implementation</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                        <a href="">
+                            <div class="card-flyer">
+                                <div class="text-box">
+                                    <div class="image-box">
+                                        <img src="{{ url_for('static', filename='css/images/sam.jpeg') }}" alt="" />
+                                    </div>
+    
+                                    <div class="text-container">
+                                        <h6>Sameeksha Chopra</h6>
+                                       <p style="font-weight: bold;">Model Development<br> Data preprocessing</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                        <a href="">
+                            <div class="card-flyer">
+                                <div class="text-box">
+                                    <div class="image-box">
+                                        <img src="{{ url_for('static', filename='css/images/sweety.jpeg') }}" alt="" />
+                                    </div>
+                                    <div class="text-container">
+                                        <h6>Sweety Roopchandani</h6>
+                                       <p style="font-weight: bold;">UI Design <br> UI Implementation</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
+    
 
 
     </div>
